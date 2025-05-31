@@ -215,7 +215,26 @@ public class ExplorerSearchTest
     }
 
 // Possible Moves - Three Movement Options
+    @Test
+    public void testPossibleMoves_ThreeMovementOptions()
+    {
+        int[][] island = {
+            {1, 1, 1, 1, 1},
+            {2, 2, 2, 2, 2},
+            {3, 3, 1, 0, 1},
+            {3, 3, 2, 1, 1},
+            {2, 2, 2, 1, 1}
+        };
 
+        int[] location = {2, 3};
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+        Set<String> moveSet = toSet(moves);
+
+        assertEquals(3, moveSet.size());
+        assertTrue(moveSet.contains("2,2"));
+        assertTrue(moveSet.contains("2,4"));
+        assertTrue(moveSet.contains("3,3"));
+    }
 
 
     private Set<String> toSet(List<int[]> list)
