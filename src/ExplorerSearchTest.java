@@ -1,4 +1,7 @@
 import static org.junit.Assert.*;
+
+import java.util.List;
+
 import org.junit.Test;
 
 public class ExplorerSearchTest
@@ -104,6 +107,22 @@ public class ExplorerSearchTest
         int[] actual = ExplorerSearch.explorerLocation(island);
 
         assertArrayEquals(expected, actual);
+    }
+
+// Possible Moves - Surrounded by Water
+    @Test
+    public void testPossibleMoves_SurroundedByWater()
+    {
+        int[][] island = {
+            {2, 2, 2},
+            {2, 0, 2},
+            {2, 2, 2}
+        };
+
+        int[] location = {1, 1};
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+
+        assertTrue(moves.isEmpty());
     }
 
 }
