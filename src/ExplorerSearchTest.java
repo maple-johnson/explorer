@@ -72,6 +72,21 @@ public class ExplorerSearchTest
     }
 
 // Location Check - Bottom Right
+    @Test
+    public void testExplorerLocation_BottomRight()
+    {
+        int[][] island = {
+            {1, 2, 3, 1, 2},
+            {1, 2, 3, 1, 2},
+            {1, 2, 3, 1, 2},
+            {1, 2, 3, 1, 2},
+            {1, 2, 3, 1, 0}
+        };
 
+        int[] expected = {4, 4};
+        int[] actual = ExplorerSearch.explorerLocation(island);
+
+        assertArrayEquals(expected, actual);
+    }
 
 }
