@@ -33,28 +33,27 @@ public class ExplorerSearch
     {
         int[] start = explorerLocation(island);
         boolean[][] visited = new boolean[island.length][island[0].length];
-        int count = 0; 
-        return reachableArea(island, start, visited, count);
+        return reachableArea(island, start, visited);
     }
 
-    public static int reachableArea(int[][] island, int[] current, boolean[][] visited, int count)
+    public static int reachableArea(int[][] island, int[] current, boolean[][] visited)
     {
         int curR = current[0];
         int curC = current[1];
+        int count = 0;
 
         if (visited[curR][curC]) return 0;
 
         visited[curR][curC] = true;
-        count++;
 
         List<int[]> neighbors = possibleMoves(island, current);
 
         for (int[] neighbor : neighbors)
         {
-            count += reachableArea(island, neighbor, visited, count);
+            count += reachableArea(island, neighbor, visited);
         }
 
-        return count;
+        return count + 1;
     }
 
     public static List<int[]> possibleMoves(int[][] island, int[] current)
