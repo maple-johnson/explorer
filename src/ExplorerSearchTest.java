@@ -89,4 +89,21 @@ public class ExplorerSearchTest
         assertArrayEquals(expected, actual);
     }
 
+// Location Check - Different Row and Column Coordinates
+    @Test
+    public void testExplorerLocation_DifferingCoordinates()
+    {
+        int[][] island = {
+            {1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1, 0, 1, 1},
+            {1, 1, 1, 1, 1, 1, 1, 1}
+        };
+
+        int[] expected = {2, 5};
+        int[] actual = ExplorerSearch.explorerLocation(island);
+
+        assertArrayEquals(expected, actual);
+    }
+
 }
