@@ -125,4 +125,20 @@ public class ExplorerSearchTest
         assertTrue(moves.isEmpty());
     }
 
+// Possible Moves - Surrounded by Mountains
+    @Test
+    public void testPossibleMoves_SurroundedByMountains()
+    {
+        int[][] island = {
+            {3, 3, 3},
+            {3, 0, 3},
+            {3, 3, 3}
+        };
+
+        int[] location = {1, 1};
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+
+        assertTrue(moves.isEmpty());
+    }
+
 }
