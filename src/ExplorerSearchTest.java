@@ -141,4 +141,18 @@ public class ExplorerSearchTest
         assertTrue(moves.isEmpty());
     }
 
+// Possible Moves - Surrounded by Out of Bounds
+    @Test
+    public void testPossibleMoves_SurroundedByOutOfBounds()
+    {
+        int[][] island = {
+            {0}
+        };
+
+        int[] location = {0, 0};
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+
+        assertTrue(moves.isEmpty());
+    }
+
 }
