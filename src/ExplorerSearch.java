@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExplorerSearch {
+public class ExplorerSearch 
+{
 
     /**
      * Returns how much land area an explorer can reach on a rectangular island.
@@ -28,10 +29,32 @@ public class ExplorerSearch {
      * @param island the locations on the island
      * @return the number of spaces the explorer can reach
      */
-    public static int reachableArea(int[][] island) {
+    public static int reachableArea(int[][] island) 
+    {
         // Implement your method here!
         // Please also make more test cases
         // I STRONGLY RECOMMEND testing some helpers you might make too
         return -1;
     }
+
+    public static int[] explorerLocation(int[][] island)
+    {
+        for (int r = 0; r < island.length; r++)
+        {
+            for (int c = 0; c < island[r].length; c++)
+            {
+                if (island[r][c] == 0)
+                {
+                    int[] location = new int[]{r, c};
+                    return location;
+                }
+
+            }
+
+        }
+        
+        throw new IllegalArgumentException("No explorer on the island.");
+        
+    }
+
 }
