@@ -45,10 +45,14 @@ public class ExplorerSearch
         if (visited[curR][curC]) return 0;
 
         visited[curR][curC] = true;
+        count++;
 
-        // Possible Movement
+        List<int[]> neighbors = possibleMoves(island, current);
 
-        // Go through each option and iterate count
+        for (int[] neighbor : neighbors)
+        {
+            count += reachableArea(island, neighbor, visited, count);
+        }
 
         return count;
     }
