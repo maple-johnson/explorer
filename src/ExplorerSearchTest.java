@@ -54,7 +54,22 @@ public class ExplorerSearchTest
     }
 
 // Location Check - Caldera
+    @Test
+    public void testExplorerLocation_Caldera()
+    {
+        int[][] island = {
+            {3, 3, 3, 3, 3},
+            {3, 2, 2, 2, 3},
+            {3, 2, 0, 2, 3},
+            {3, 2, 2, 2, 3},
+            {3, 3, 3, 3, 3}
+        };
 
+        int[] expected = {2, 2};
+        int[] actual = ExplorerSearch.explorerLocation(island);
+
+        assertArrayEquals(expected, actual);
+    }
 
 // Location Check - Bottom Right
 
