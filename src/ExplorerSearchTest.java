@@ -22,6 +22,27 @@ public class ExplorerSearchTest
         assertEquals(14, actual);
     }
 
+// Reachable Area - Island Field
+    @Test
+    public void testReachableArea_AllReachable()
+    {
+        int[][] island = {
+            {1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1},
+            {1, 1, 0, 1, 1}
+        };
+
+        int expected = 25;
+        int actual = ExplorerSearch.reachableArea(island);
+
+        assertEquals(expected, actual);
+    }
+
+// Reachable Area - No Movement Options
+
+
 // Location Check - No Explorer
     @Test
     public void testExplorerLocation_NoExplorer()
