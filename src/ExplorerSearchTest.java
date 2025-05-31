@@ -178,6 +178,23 @@ public class ExplorerSearchTest
         assertTrue(moveSet.contains("1,0"));
     }
 
+// Possible Moves - Different Options in All Directions
+    @Test
+    public void testPossibleMoves_DifferentOptionsInAllDirections()
+    {
+        int[][] island = {
+            {1, 1, 1},
+            {2, 0, 3}
+        };
+
+        int[] location =  {1, 1};
+        List<int[]> moves = ExplorerSearch.possibleMoves(island, location);
+        Set<String> moveSet = toSet(moves);
+
+        assertEquals(1, moves.size());
+        assertTrue(moveSet.contains("0,1"));
+    }
+
 
     private Set<String> toSet(List<int[]> list)
     {
