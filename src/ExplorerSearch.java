@@ -31,10 +31,56 @@ public class ExplorerSearch
      */
     public static int reachableArea(int[][] island) 
     {
-        // Implement your method here!
-        // Please also make more test cases
-        // I STRONGLY RECOMMEND testing some helpers you might make too
-        return -1;
+        int[] start = explorerLocation(island);
+        boolean[][] visited = new boolean[island.length][island[0].length];
+        int count = 0; 
+        return reachableArea(island, start, visited, count);
+    }
+
+    public static int reachableArea(int[][] island, int[] current, boolean[][] visited, int count)
+    {
+        int curR = current[0];
+        int curC = current[1];
+
+        if (visited[curR][curC]) return 0;
+
+        visited[curR][curC] = true;
+
+        // Possible Movement
+
+        // Go through each option and iterate count
+
+        return count;
+    }
+
+    public static List<int[]> possibleMoves(int[][] island, int[] current)
+    {
+        List<int[]> moves = new ArrayList<>();
+
+        int curR = current[0];
+        int curC = current[1];
+
+        // North
+        int newR = curR -1;
+        int newC = curC;
+        if (newR >= 0 && island[newR][newC] == 1) moves.add(new int[]{newR, newC});
+
+        // South
+        newR = curR + 1;
+        newC = curC;
+        if (newR < island.length && island[newR][newC] == 1) moves.add(new int[]{newR, newC});
+
+        // East
+        newR = curR;
+        newC = curC + 1;
+        if (newC < island[newR].length && island[newR][newC] == 1) moves.add(new int[]{newR, newC});
+
+        // West
+        newR = curR;
+        newC = curC - 1;
+        if (newC >= 0 && island[newR][newC] == 1) moves.add(new int[]{newR, newC});
+
+        return moves;
     }
 
     public static int[] explorerLocation(int[][] island)
@@ -54,7 +100,7 @@ public class ExplorerSearch
         }
         
         throw new IllegalArgumentException("No explorer on the island.");
-        
+
     }
 
 }
