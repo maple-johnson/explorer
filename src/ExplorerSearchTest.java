@@ -17,7 +17,7 @@ public class ExplorerSearchTest
         assertEquals(14, actual);
     }
 
-// No Explorer
+// Location Check - No Explorer
     @Test
     public void testExplorerLocation_NoExplorer()
     {
@@ -34,4 +34,29 @@ public class ExplorerSearchTest
         });
         assertEquals("No explorer on the island.", exception.getMessage());
     }
+
+// Location Check - Top Left
+    @Test
+    public void testExplorerLocation_TopLeft()
+    {
+        int[][] island = {
+            {0, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1},
+            {3, 1, 2, 2, 3},
+            {1, 1, 2, 2, 3},
+            {1, 1, 1, 1, 1}
+        };
+
+        int[] expected = {0, 0};
+        int[] actual = ExplorerSearch.explorerLocation(island);
+
+        assertArrayEquals(expected, actual);
+    }
+
+// Location Check - Caldera
+
+
+// Location Check - Bottom Right
+
+
 }
