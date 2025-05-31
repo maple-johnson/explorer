@@ -41,7 +41,22 @@ public class ExplorerSearchTest
     }
 
 // Reachable Area - No Movement Options
+    @Test
+    public void testReachableArea_NoMovementOptions()
+    {
+        int[][] island = {
+            {0, 3, 3, 3, 3},
+            {3, 3, 3, 3, 3},
+            {3, 3, 3, 3, 3},
+            {3, 3, 3, 3, 3},
+            {3, 3, 3, 3, 3}
+        };
 
+        int expected = 1;
+        int actual = ExplorerSearch.reachableArea(island);
+
+        assertEquals(expected, actual);
+    }
 
 // Location Check - No Explorer
     @Test
